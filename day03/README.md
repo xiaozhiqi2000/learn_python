@@ -95,5 +95,5 @@
   ```
 ## 内置函数
 [官网详解](https://docs.python.org/3/library/functions.html#next)
-![/imgs/inter_function.png](/img)
+![avatar](/imgs/inter_function.png)
 ## 函数装饰器
