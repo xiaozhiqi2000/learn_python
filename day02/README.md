@@ -119,9 +119,9 @@ s.issuperset(t)   如果s是t的一个超集，则返回True
 
 ## 文件：file
 1. 使用open()函数操作文件时，一般需要经历如下步骤：
-   - 打开文件 f=open('xxx.txt','rb')
-   - 操作文件 f.readline()
-   - 关闭文件 f.close()
+- 打开文件 f=open('xxx.txt','rb')
+- 操作文件 f.readline()
+- 关闭文件 f.close()
 每次都要关闭文件很麻烦，with open('文件路径','模式') as filename: 这种方式来打开文件。
 
 2. 打开文件的模式有：
@@ -164,30 +164,10 @@ f.encoding         查看编码格式，没有使用任何编码，则为None
 f.mode             打开文件的模式
 f.newlines         显示出换行符的，空为默认\n不显示
 
-
-几个例子：
-(1)读取一个文件中的10行写入另外一个文件中
-with open('db1','r',encoding="utf-8") as f1,open('db2','w',encoding="utf-8") as f2:
-    times = 0
-    for line in f1:
-        times += 1
-        if times <= 10:
-            f2.write(line)
-        else:
-            break
-
-(2)将一个文件一行一行读取并批量替换并写入另外一个文件
-
-with open('db1','r',encoding="utf-8") as f1,open('db2','w',encoding="utf-8") as f2:
-    for line in f1:
-        new_str = line.replace('ales','st')
-        f2.write(new_str)
-
-(3)假设现在有这样一个需求，有一个10G大的文件，如何拷贝到另一个文件中去？下面将讲一下如何同时打开两个文件进行处理，以及文件太大的时候如何读取用with语句就可以同时打开两个文件，一个读，一个写。假设1.txt文件有10G大，如果用read则一次性就将内容读到内存中去了，这显然不合适，如果用readline()的话虽然也可以读一行，但是并不知道何时结束，但是可以用for循环读取文件这个可迭代的对象，一行行的读取。下面三行代码就可以实现了
-
-with open('1.txt','r',encoding='utf-8') as fread,open('2.txt','w') as fwrite:
-    for line in fread:　　　　　　　　　　#一行行的读
-        fwrite.write(line)　　　　　　　 #一行行的写
+文件迭代：
+f = open('/etc/passwd','r')
+for line in f:
+    print(line)
 ```
 
 
