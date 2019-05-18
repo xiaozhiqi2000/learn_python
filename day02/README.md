@@ -84,6 +84,16 @@ dict.update(key)   将一个字典合并到当前字典中
 dict.iteritems()   生成key-value迭代器，可以用next()取下个key-value
 dict.iterkeys()    生成key迭代器
 dict.itervalues()  生成values迭代器
+
+两种遍历字典方法：
+第一种：
+for k,v in dict.items():
+    print(k,v)
+
+
+第二种：高效
+for key in dict:
+    print(key,dict[key])
 ```
 
 ## 集合：set 
@@ -108,3 +118,78 @@ s.issuperset(t)   如果s是t的一个超集，则返回True
 ```
 
 ## 文件：file
+1. 使用open()函数操作文件时，一般需要经历如下步骤：
+   - 打开文件 f=open('xxx.txt','rb')
+   - 操作文件 f.readline()
+   - 关闭文件 f.close()
+每次都要关闭文件很麻烦，with open('文件路径','模式') as filename: 这种方式来打开文件。
+
+2. 打开文件的模式有：
+- r ，只读模式【默认】
+   - w，只写模式【不可读；不存在则创建；存在则清空内容；】
+   - x， 只写模式【不可读；不存在则创建，存在则报错】
+   - a， 追加模式【可读；   不存在则创建；存在则只追加内容；】
+- "+" 表示可以同时读写某个文件
+   - r+， 读写【可读，可写】
+   - w+，写读【可读，可写】
+   - x+ ，写读【可读，可写】
+   - a+， 写读【可读，可写】
+- "b"表示以字节的方式操作
+   - rb  或 r+b
+   - wb 或 w+b
+   - xb 或 w+b
+   - ab 或 a+b
+注：以b方式打开时，读取到的内容是字节类型，写入时也需要提供字节类型，当以二进制的方式的效率比较高，因为磁盘底层是以字节存储
+
+```
+f.close()        关闭文件
+f.fileno()       返回文件描述符
+f.readline()     从当前指针读取一行
+f.readlines()    从当前指针读取到结尾的全部行
+f.read()         从当前指针读多少个字节,没有参数读取全部
+f.tell()         告诉当前指针，是字节
+f.seek(offset [whence])    移动指针，f.seek(0)把指针移动第一行第0个字节位置
+    offset: 偏移量
+    whence: 位置
+        0: 从文件头
+        1：从当前位置
+        2：从文件尾部
+f.write(string)    打开文件时，文件不存在，r,r+都会报错，其他模式则不会
+f.writelines()     必须是字符串序列，把字符串序列当作一个列表写进文件
+f.flush()          在文件没有关闭时，可以将内存中的数据刷写至磁盘
+f.truncate()       文件截取多少字节保留,指针后面的内容全部会清空
+f.name             是返回文件名字，不是方法，是属性    
+f.closed           判断文件是否已经关闭
+f.encoding         查看编码格式，没有使用任何编码，则为None
+f.mode             打开文件的模式
+f.newlines         显示出换行符的，空为默认\n不显示
+
+
+几个例子：
+(1)读取一个文件中的10行写入另外一个文件中
+with open('db1','r',encoding="utf-8") as f1,open('db2','w',encoding="utf-8") as f2:
+    times = 0
+    for line in f1:
+        times += 1
+        if times <= 10:
+            f2.write(line)
+        else:
+            break
+
+(2)将一个文件一行一行读取并批量替换并写入另外一个文件
+
+with open('db1','r',encoding="utf-8") as f1,open('db2','w',encoding="utf-8") as f2:
+    for line in f1:
+        new_str = line.replace('ales','st')
+        f2.write(new_str)
+
+(3)假设现在有这样一个需求，有一个10G大的文件，如何拷贝到另一个文件中去？下面将讲一下如何同时打开两个文件进行处理，以及文件太大的时候如何读取用with语句就可以同时打开两个文件，一个读，一个写。假设1.txt文件有10G大，如果用read则一次性就将内容读到内存中去了，这显然不合适，如果用readline()的话虽然也可以读一行，但是并不知道何时结束，但是可以用for循环读取文件这个可迭代的对象，一行行的读取。下面三行代码就可以实现了
+
+with open('1.txt','r',encoding='utf-8') as fread,open('2.txt','w') as fwrite:
+    for line in fread:　　　　　　　　　　#一行行的读
+        fwrite.write(line)　　　　　　　 #一行行的写
+```
+
+
+
+
