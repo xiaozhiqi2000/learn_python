@@ -1,20 +1,19 @@
 # 今天主要内容
 ## 函数
 1. 函数的定义
-
-函数是python为了代码最大程度地重用和最小化代码冗余而提供的基本结构
-```
-def function_name(args):
-    function_content
-    return
-```
+   - 函数是python为了代码最大程度地重用和最小化代码冗余而提供的基本结构
+     ```
+     def function_name(args):
+         function_content
+         return
+     ```
 2. 函数的返回值
    - 函数的返回值用return语句来返回结果，默认是返回None;
    - 返回多个值时，彼此间使用逗号分隔，且组合为元组形式返回一个对象;
    - 函数一旦执行到return,函数就终止了,如果return下面还有执行语句则终止
 3. 函数的参数
 
-默认情况下，参数通过其位置进行传递，从左至右，这意味着，必须精确地传递和函数头部参数一样多的参数
+   默认情况下，参数通过其位置进行传递，从左至右，这意味着，必须精确地传递和函数头部参数一样多的参数
    + 普通参数：定义函数时从左至右
      ```
      # name为普通参数也叫形式参数,简称：形参
@@ -51,7 +50,7 @@ def function_name(args):
    + 动态参数：定义函数时形式参数中收集任意多基于普通参数
       - 定义函数时使用* ：收集普通参数，返回元组,*args
       - 定义函数时使用**：收集指定参数，返回字典,**kwargs
-   + 动态参数解包：调用函数时，使用\*或者\*\*开头的参数，从而传递任意多基于普通或指定参数
+      - 调用函数时，使用\*或者\*\*开头的参数，从而传递任意多基于普通或指定参数
      ```
      # 俗称万能参数
      def f1(*args,**kwargs):
@@ -74,5 +73,27 @@ def function_name(args):
    - 满足LEGB：L是Local(本地变量),E是Excluding(嵌套变量),G是GOLAB(全局变量),B是Building(内建变量)
 
 [更多作用域](http://www.cnblogs.com/xiaozhiqi/articles/5795637.html)
+## lambda 函数表达式
+- 对于简单的函数，也存在一种简便的表示方式，即：lambda表达式
+- lambda表达式会自动return返回值,条件为真返回True,条件为假返回False.
+  ```
+  # ###################### 普通函数 ######################
+  # 定义函数（普通方式）
+  def func(arg):
+      return arg + 1
+      
+  # 执行函数
+  result = func(123)
+      
+  # ###################### lambda ########################
+      
+  # 定义函数（lambda表达式）
+  my_lambda = lambda arg1, arg2 : arg1 + arg2 + 1
+      
+  # 执行函数
+  result = my_lambda(123, 23)
+  ```
 ## 内置函数
+[官网详解](https://docs.python.org/3/library/functions.html#next)
+![/imgs/inter_function.png](/img)
 ## 函数装饰器
