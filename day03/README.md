@@ -1,4 +1,8 @@
 # 今天主要内容
+1. 函数
+2. 内置函数
+3. 函数装饰器
+
 ## 函数
 1. 函数的定义
    - 函数是python为了代码最大程度地重用和最小化代码冗余而提供的基本结构
@@ -71,8 +75,8 @@
    - 在函数内如果要修改全局变量,需要global
    - 特殊:字典,列表可以在函数内修改,但是不能重新赋值
    - 满足LEGB：L是Local(本地变量),E是Excluding(嵌套变量),G是GOLAB(全局变量),B是Building(内建变量)
+   - [更多作用域](http://www.cnblogs.com/xiaozhiqi/articles/5795637.html)
 
-[更多作用域](http://www.cnblogs.com/xiaozhiqi/articles/5795637.html)
 ## lambda 函数表达式
 - 对于简单的函数，也存在一种简便的表示方式，即：lambda表达式
 - lambda表达式会自动return返回值,条件为真返回True,条件为假返回False.
@@ -88,13 +92,15 @@
   # ###################### lambda ########################
       
   # 定义函数（lambda表达式）
-  my_lambda = lambda arg1, arg2 : arg1 + arg2 + 1
+  my_lambda = lambda arg1, arg2=50 : arg1 + arg2 + 1
       
   # 执行函数
   result = my_lambda(123, 23)
   ```
+
 ## 内置函数
 [官网详解](https://docs.python.org/3/library/functions.html#next)
 
 ![avatar](/day03/imgs/inter_function.png)
+
 ## 函数装饰器
