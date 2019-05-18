@@ -1,4 +1,4 @@
-#今天主要内容
+# 今天主要内容
 1. 数据类型
 - 数字：int float
 - 字符：str
@@ -6,9 +6,8 @@
 - 元组：tuple
 - 集合：set frozenset
 - 文件：file
-![avatar](/day03/imgs/inter_function.png)
 
-##数字：int float
+## 数字：int float
 
 python的数字字面量：整数，布尔型，浮点数，复数，所有数字类型均为不可变
 - int（整型）
@@ -20,7 +19,7 @@ python的数字字面量：整数，布尔型，浮点数，复数，所有数�
 - float(浮点型)
 - 数字操作：+ , -, *, /, //, **, %, -x, +x
 
-##字符：str 不可变对象
+## 字符：str 不可变对象
 
 字符串字面量：把文本放入单引号、双引号或三引号中，python2.x默认不是国际字符集unicode，需要unicode定义时加上u,python3无需加
 ```
@@ -47,7 +46,7 @@ str.startswith()    找出以什么为开头的字符元素
 str.endswith()      找出以什么为结尾的字符元素
 ```
 
-##列表：list 可变对象
+## 列表：list 可变对象
 ```
 list.insert() 在列表中指定索引位置前插入元素
 list.append() 在列表尾部插入
@@ -63,13 +62,13 @@ l1 + l2 :  合并两个列表，返回一个新的列表，不会修改原列表
 l1 * N :   把l1重复N次，返回一个新列表
 ```
 
-##元组：tuple 不可变对象
+## 元组：tuple 不可变对象
 ```
 tuple.count() 统计元组中元素的个数
 tuple.index() 找出元组中元素的索引位置
 ```
 
-##字典：dict
+## 字典：dict
 ```
 dict.get(key)      取得某个key的value
 dict.has_key(key)  判断字典是否有这个key,在python3中已经废除,使用in 判断
@@ -87,7 +86,7 @@ dict.iterkeys()    生成key迭代器
 dict.itervalues()  生成values迭代器
 ```
 
-##集合：set 
+## 集合：set 
 ```
 s.add(item)     将item添加到s中。如果item已经在s中，则无任何效果
 s.remove(item)  从s中删除item。如果item不是s的成员，则引发KeyError异常
@@ -108,4 +107,4 @@ s.issubset(t)     如果s是t的一个子集，则返回True
 s.issuperset(t)   如果s是t的一个超集，则返回True
 ```
 
-##文件：file
+## 文件：file
