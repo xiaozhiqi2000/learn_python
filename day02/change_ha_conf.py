@@ -31,7 +31,9 @@ def ha_fetch(backend_domain):
 
 def ha_add(backend_domain, record):
     """
-
+    添加后端server,两种情况，1.用户输入的backend_domain不存在
+                             2.用户输入的backend_domain存在且有对应的server记录
+                                                           但没有对应的server记录
     :param backend_domain:
     :param record: {"backend":"www.oldboy.org","record":{"server":"192.168.1.9","weight":"30","maxconn":"20"}}
     :return:
