@@ -451,13 +451,14 @@ ret = ' '.join(temp)
 print(ret)
 烧饼 is sb
 
-两个列表合成一个字典
+两个列表合成一个字典:
 keys = [1,2,3,4,5,6,7]
 vaules = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat']
 D = {}
 for (k,v) in zip(keys,values):
     D[k] = v
-D
+
+print(D)
 {1: 'Sun', 2: 'Mon', 3: 'Tue', 4: 'Wed', 5: 'Thu', 6: 'Fri', 7: 'Sat'}
 ```
 
