@@ -469,10 +469,8 @@ s = "print(123)"
 r = compile(s,"<string>","exec")
 exec(r)
 123
-```
 
-##### exec和eval的区别
-```
+exec和eval的区别:
 exec("7+8+9")
 ret = eval("7+8+9")
 print(ret)
