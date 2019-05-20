@@ -84,21 +84,21 @@
 
 ## 运算符
 1. 算数运算
-![](/day01/imgs/1.png)
+![avatar](/day01/imgs/1.png)
 2. 比较运算
-![](/day01/imgs/2.png)
+![avatar](/day01/imgs/2.png)
 3. 赋值运算
-![](/day01/imgs/3.png)
+![avatar](/day01/imgs/3.png)
 4. 逻辑运算
-![](/day01/imgs/4.png)
+![avatar](/day01/imgs/4.png)
 5. 成员运算
-![](/day01/imgs/5.png)
+![avatar](/day01/imgs/5.png)
 6. 身份运算
-![](/day01/imgs/6.png)
+![avatar](/day01/imgs/6.png)
 7. 位运算
-![](/day01/imgs/7.png)
+![avatar](/day01/imgs/7.png)
 8. 运算符优先级
-![](/day01/imgs/8.png)
+![avatar](/day01/imgs/8.png)
 
 ## If流程控制
 1. if语法结构
