@@ -1,11 +1,12 @@
 # 今天主要内容
-1. python对象
-2. 变量定义
-3. 字符编码
-4. If流程控制
-5. For/While循环
-6. 输入/输出/注释
-7. 格式化输出
+1. [python对象](https://github.com/xiaozhiqi2000/learn_python/tree/master/day01#python%E5%AF%B9%E8%B1%A1%E7%9B%B8%E5%85%B3%E6%9C%AF%E8%AF%AD)
+2. [变量定义](https://github.com/xiaozhiqi2000/learn_python/tree/master/day01#%E5%8F%98%E9%87%8F)
+3. [字符编码](https://github.com/xiaozhiqi2000/learn_python/tree/master/day01#%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81)
+4. [运算符](https://github.com/xiaozhiqi2000/learn_python/tree/master/day01#if%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6)
+5. [If流程控制](https://github.com/xiaozhiqi2000/learn_python/tree/master/day01#%E8%BF%90%E7%AE%97%E7%AC%A6)
+6. [For/While循环](https://github.com/xiaozhiqi2000/learn_python/tree/master/day01#forwhile%E5%BE%AA%E7%8E%AF)
+7. [输入/输出/注释](https://github.com/xiaozhiqi2000/learn_python/tree/master/day01#%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%B3%A8%E9%87%8A)
+8. [格式化输出](https://github.com/xiaozhiqi2000/learn_python/tree/master/day01#%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%BE%93%E5%87%BA)
 
 ## python对象相关术语
 1. python对象：

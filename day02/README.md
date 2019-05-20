@@ -1,11 +1,12 @@
 # 今天主要内容
 1. 数据类型
-- 数字：int float
-- 字符：str
-- 列表：list
-- 元组：tuple
-- 集合：set frozenset
-- 文件：file
+- [数字](https://github.com/xiaozhiqi2000/learn_python/tree/master/day02#数字)
+- [字符](https://github.com/xiaozhiqi2000/learn_python/tree/master/day02#字符)
+- [列表](https://github.com/xiaozhiqi2000/learn_python/tree/master/day02#列表)
+- [元组](https://github.com/xiaozhiqi2000/learn_python/tree/master/day02#元组)
+- [集合](https://github.com/xiaozhiqi2000/learn_python/tree/master/day02#集合)
+- [文件](https://github.com/xiaozhiqi2000/learn_python/tree/master/day02#文件)
+- [序列操作通用](https://github.com/xiaozhiqi2000/learn_python/tree/master/day02#序列操作通用)
 
 ## 数字：int float
 
@@ -118,13 +119,13 @@ s.issuperset(t)   如果s是t的一个超集，则返回True
 ```
 
 ## 文件：file
-1. 使用open()函数操作文件时，一般需要经历如下步骤：
+### 1. 使用open()函数操作文件时，一般需要经历如下步骤：
 - 打开文件 f=open('xxx.txt','rb')
 - 操作文件 f.readline()
 - 关闭文件 f.close()
 每次都要关闭文件很麻烦，with open('文件路径','模式') as filename: 这种方式来打开文件。
 
-2. 打开文件的模式有：
+### 2. 打开文件的模式有：
 - r ，只读模式【默认】
    - w，只写模式【不可读；不存在则创建；存在则清空内容；】
    - x， 只写模式【不可读；不存在则创建，存在则报错】
@@ -170,6 +171,29 @@ for line in f:
     print(line)
 ```
 
+### 3. 例子：
 
+[读写文件的例子](https://github.com/xiaozhiqi2000/learn_python/blob/master/day02/file_do.py)
 
+[修改ha.conf](https://github.com/xiaozhiqi2000/learn_python/blob/master/day02/change_ha_conf.py)
 
+## 序列操作通用
+```
+s + r     连接
+s * n     重复s的n次复制
+v1,v2...vn = s     变量解包(unpack)
+s[i]      索引
+s[i:j]    切片
+s[i:j:stride]      扩展切片
+x in s,x not in s  成员关系
+for x in s:        迭代
+all(s)    如果s中的所有项都为True，则返回True
+any(s)    如果s中的任意项为True，则返回True
+len(s)    长度,元素个数
+min(s)    s中的最小项
+max(s)    s中的最大项
+sum(s [,initial])    具有可选初始值的项的和
+del s[i]     删除一个元素
+del s[i:j]   删除一个切片
+del s[i:j:stride]    删除一个扩展切片
+```

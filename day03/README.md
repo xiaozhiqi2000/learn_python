@@ -79,7 +79,7 @@
    - 满足LEGB：L是Local(本地变量),E是Excluding(嵌套变量),G是GOLAB(全局变量),B是Building(内建变量)
    - [更多作用域](http://www.cnblogs.com/xiaozhiqi/articles/5795637.html)
 
-例子：
+### 5. 例子：
 
 [不带参数的发邮件函数](https://github.com/xiaozhiqi2000/learn_python/blob/master/day03/sendmail.py)
 
@@ -195,6 +195,7 @@ end                                    # f函数执行完，接着执行inner1�
 结束                                   # 最后执行inner2函数里面的 print('结束')
 
 ```
-例子：
+
+### 3. 例子：
 
 [登录注册的装饰器](https://github.com/xiaozhiqi2000/learn_python/blob/master/day03/loginRegister.py)
