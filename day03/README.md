@@ -79,6 +79,10 @@
    - 满足LEGB：L是Local(本地变量),E是Excluding(嵌套变量),G是GOLAB(全局变量),B是Building(内建变量)
    - [更多作用域](http://www.cnblogs.com/xiaozhiqi/articles/5795637.html)
 
+[不带参数的发邮件函数](https://github.com/xiaozhiqi2000/learn_python/blob/master/day03/sendmail.py)
+[带参数的发邮件函数](https://github.com/xiaozhiqi2000/learn_python/blob/master/day03/sendmail_args.py)
+[函数式编程登录注册](https://github.com/xiaozhiqi2000/learn_python/blob/master/day03/loginRegister.py)
+
 ## lambda 函数表达式
 - 对于简单的函数，也存在一种简便的表示方式，即：lambda表达式
 - lambda表达式会自动return返回值,条件为真返回True,条件为假返回False.
@@ -141,9 +145,9 @@ print("返回值是:",ret)
 (2)碰到@outer装饰器就会自动执行outer()函数并把f1这个函数名通过参数传递到outer(f1),f1重新赋值为inter这个函数体
 
 (3)碰到def inner()就把函数体加载内存
-   - 1.此时inner()函数体中就有了print("before"),print("F1"),print("after")3句代码
-   - 2.并将返回值赋值给变量ret,然后return rest返回
-   - 3.python碰到return同一级代码不再执行了,此时inner()函数就结束了(因为inner函数没有调用,所以没有执行)
+    1.此时inner()函数体中就有了print("before"),print("F1"),print("after")3句代码
+    2.并将返回值赋值给变量ret,然后return ret返回
+    3.python碰到return同一级代码不再执行了,此时inner()函数就结束了(因为inner函数没有调用,所以没有执行)
 
 (4)碰到ret = f1(),f1()被调用了就会执行f1函数就会执行inner的函数体,并用ret接收返回值
 
@@ -188,3 +192,4 @@ end                                    # f函数执行完，接着执行inner1�
 
 ```
 
+[登录注册的装饰器](https://github.com/xiaozhiqi2000/learn_python/blob/master/day03/loginRegister.py)
