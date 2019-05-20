@@ -1,8 +1,8 @@
 # 今天主要内容
-1. 函数
-2. lambda表达式
-3. 内置函数
-4. 函数装饰器
+1. [函数](https://github.com/xiaozhiqi2000/learn_python/tree/master/day03#%E5%87%BD%E6%95%B0)
+2. [lambda表达式](https://github.com/xiaozhiqi2000/learn_python/tree/master/day03#lambda-%E5%87%BD%E6%95%B0%E8%A1%A8%E8%BE%BE%E5%BC%8F)
+3. [内置函数](https://github.com/xiaozhiqi2000/learn_python/tree/master/day03#%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0)
+4. [函数装饰器](https://github.com/xiaozhiqi2000/learn_python/tree/master/day03#%E5%87%BD%E6%95%B0%E8%A3%85%E9%A5%B0%E5%99%A8)
 
 ## 函数
 1. 函数的定义
