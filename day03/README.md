@@ -115,6 +115,8 @@
 
 [内置函数查看](https://github.com/xiaozhiqi2000/learn_python/blob/master/day03/build_function.md)
 
+[利用内置函数random生成随机数](https://github.com/xiaozhiqi2000/learn_python/blob/master/day03/randRandom.py)
+
 ## 函数装饰器
 
 　装饰器可以使函数执行前和执行后分别执行其他的附加功能，这种在代码运行期间动态增加功能的方式，称之为“装饰器”(Decorator)，装饰器的功能非常强大。装饰器一般接受一个函数对象作为参数，以对其进行增强
@@ -199,3 +201,5 @@ end                                    # f函数执行完，接着执行inner1�
 ### 3. 例子：
 
 [登录注册的装饰器](https://github.com/xiaozhiqi2000/learn_python/blob/master/day03/loginRegister.py)
+
+[用户管理的装饰器](https://github.com/xiaozhiqi2000/learn_python/blob/master/day03/userManagerDecorator.py)
