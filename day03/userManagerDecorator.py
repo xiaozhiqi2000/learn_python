@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 # -*-coding: utf8-*-
-
 """
 用户管理程序
     普通用户：登录，注册，修改密码，查看本用户信息
@@ -47,7 +46,16 @@ def checkAdmin(func):
             print("无权限查看")
     return inner
 
+def checkLogin(func):
+    def inner():
+        if USER_FLAG.get('is_login', None):
+            ret = func()
+            return ret
+        else:
+            print("请先登录,然后才能继续操作")
+    return inner
 
+@checkLogin
 @checkAdmin
 def seeUserInfo():
     with open("userinfo", "r") as f:
@@ -55,13 +63,6 @@ def seeUserInfo():
             user = line.strip().split("|")
             return user
 
-def outer(func):
-    def inner():
-        if USER_FLAG.get('is_login', None):
-            func()
-        else:
-            print("请先登录,然后才能继续操作")
-    return inner
 
 
 def login(user, pwd):
@@ -89,7 +90,7 @@ def register(*args):
             return True
 
 
-@outer
+@checkLogin
 def changepwd():
     import os
     newPassword = input("请输入你的新密码:")
@@ -115,38 +116,43 @@ def changepwd():
     print("修改密码成功")
 
 
-@outer
+@checkLogin
 def searchUser():
     pass
 
 
-@outer
+@checkLogin
 def searchSomthing():
     pass
 
 
 def nextData():
-    nextnum = input("请继续输入：1.修改密码 2.查询用户信息 3.模糊查询：")
+    nextnum = input("请继续输入：1.修改密码 2.查询用户信息 3.模糊查询 4.退出>>>")
     return nextnum
 
 def nextDo():
-    nextnum = nextData()
-    nextnum = str_to_num(nextnum)
-    if nextnum == 1:
-        changepwd()
-    elif nextnum == 2:
-        info = seeUserInfo()
-        print("="*100)
-        print(info)
-        print("="*100)
-    elif nextnum == 3:
-        pass
-    else:
-        print("请输入有效数字")
+    while True:
+        nextnum = nextData()
+        nextnum = str_to_num(nextnum)
+        if nextnum == 1:
+            changepwd()
+        elif nextnum == 2:
+            info = seeUserInfo()
+            if info:
+                print("="*100)
+                print(info)
+                print("="*100)
+                continue
+        elif nextnum == 3:
+            pass
+        elif nextnum == 4:
+            break
+        else:
+            print("请输入有效数字")
 
 
 
-def main():
+while True:
     num = input("1.登录，2.注册，3.修改密码，4.查询用户信息 5.模糊查询：")
     num = str_to_num(num)
     if num == 1:
@@ -174,8 +180,4 @@ def main():
         searchSomthing()
     else:
         print("请输入有效数字")
-
-main()
-
-
 
