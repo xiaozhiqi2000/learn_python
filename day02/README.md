@@ -197,3 +197,8 @@ del s[i]     删除一个元素
 del s[i:j]   删除一个切片
 del s[i:j:stride]    删除一个扩展切片
 ```
+### 1. 例子：
+
+[市县级的三级联动](https://github.com/xiaozhiqi2000/learn_python/blob/master/day02/cityDict.py)
+
+[购物车](https://github.com/xiaozhiqi2000/learn_python/blob/master/day02/shopCar.py)
