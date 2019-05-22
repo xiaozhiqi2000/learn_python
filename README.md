@@ -4,7 +4,7 @@
 ### [day03 函数定义,返回值,参数,内置函数,函数装饰器](https://github.com/xiaozhiqi2000/learn_python/tree/master/day03)
 ### [day04 迭代器,列表解析,迭代器,迭代器表达式,递归,深浅复制](https://github.com/xiaozhiqi2000/learn_python/tree/master/day04)
 ### [day05 python模块,正则表达式re模块](https://github.com/xiaozhiqi2000/learn_python/tree/master/day05)
-### [day06 模块sys,os,hashlib,random,time,datetime,logging,shbprocess](https://github.com/xiaozhiqi2000/learn_python/tree/master/day06)
+### [day06 模块sys,os,hashlib,random,time,datetime,logging,subprocess](https://github.com/xiaozhiqi2000/learn_python/tree/master/day06)
 ### [day07 模块json,pickle,XML,PyYAML,configparser,shutil](https://github.com/xiaozhiqi2000/learn_python/tree/master/day07)
 ### [day08 面向对象基础](https://github.com/xiaozhiqi2000/learn_python/tree/master/day08)
 ### [day09 面向对象进阶](https://github.com/xiaozhiqi2000/learn_python/tree/master/day09)
