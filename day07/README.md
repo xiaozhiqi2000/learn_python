@@ -346,7 +346,7 @@ ret = config.get('section1', 'k1') #获取指定节点下指定key的值
 # v = config.getfloat('section1', 'k1')
 # v = config.getboolean('section1', 'k1')
 print(ret)
-
+```
 #### 2. 检查、删除、添加节点
 ```
 import configparser
