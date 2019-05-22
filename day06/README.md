@@ -1,12 +1,12 @@
 # 今天主要内容
-1. [sys]()
-2. [os]()
-3. [hashlib]()
-4. [random]()
-5. [time]()
-6. [datetime]()
-7. [logging]()
-8. [subprocess]()
+1. [sys](https://github.com/xiaozhiqi2000/learn_python/tree/master/day06#subprocess%E6%A8%A1%E5%9D%97)
+2. [os](https://github.com/xiaozhiqi2000/learn_python/tree/master/day06#os%E6%A8%A1%E5%9D%97)
+3. [hashlib](https://github.com/xiaozhiqi2000/learn_python/tree/master/day06#hashlib%E6%A8%A1%E5%9D%97)
+4. [random](https://github.com/xiaozhiqi2000/learn_python/tree/master/day06#random%E6%A8%A1%E5%9D%97)
+5. [time](https://github.com/xiaozhiqi2000/learn_python/tree/master/day06#time%E6%A8%A1%E5%9D%97)
+6. [datetime](https://github.com/xiaozhiqi2000/learn_python/tree/master/day06#datetime%E6%A8%A1%E5%9D%97)
+7. [logging](https://github.com/xiaozhiqi2000/learn_python/tree/master/day06#logging%E6%A8%A1%E5%9D%97)
+8. [subprocess](https://github.com/xiaozhiqi2000/learn_python/tree/master/day06#subprocess%E6%A8%A1%E5%9D%97)
 
 ## sys模块
 
