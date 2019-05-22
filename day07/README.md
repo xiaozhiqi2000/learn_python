@@ -365,7 +365,7 @@ config.write(open('xxxooo', 'w'))
 config.remove_section("SEC_1")
 config.write(open('xxxooo', 'w'))
 ```
-### 3.检查、删除、设置指定组内的键值对
+#### 3.检查、删除、设置指定组内的键值对
 ```
 import configparser
   
