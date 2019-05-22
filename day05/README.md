@@ -1,12 +1,17 @@
 # 今天主要内容
-1. [python模块]()
-2. [正则表达式re模块]()
+1. [python模块](https://github.com/xiaozhiqi2000/learn_python/tree/master/day05#python%E6%A8%A1%E5%9D%97)
+2. [正则表达式re模块](https://github.com/xiaozhiqi2000/learn_python/tree/master/day05#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8Fre%E6%A8%A1%E5%9D%97)
+- [匹配规则](https://github.com/xiaozhiqi2000/learn_python/tree/master/day05#1%E5%8C%B9%E9%85%8D%E8%A7%84%E5%88%99)
+- [re模块相关方法](https://github.com/xiaozhiqi2000/learn_python/tree/master/day05#2re%E6%A8%A1%E5%9D%97%E7%9B%B8%E5%85%B3%E6%96%B9%E6%B3%95)
+- [re模块flags标识位](https://github.com/xiaozhiqi2000/learn_python/tree/master/day05#3re%E6%A8%A1%E5%9D%97flags%E6%A0%87%E8%AF%86%E4%BD%8D)
+- [原生字符串、编译、分组](https://github.com/xiaozhiqi2000/learn_python/tree/master/day05#4%E5%8E%9F%E7%94%9F%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%BC%96%E8%AF%91%E5%88%86%E7%BB%84)
+3. [常用正则表达式](https://github.com/xiaozhiqi2000/learn_python/tree/master/day05#%E5%B8%B8%E7%94%A8%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F)
 
 ## Python模块
 
 用一砣代码实现了某个功能的代码集合。 类似于函数式编程和面向过程编程，函数式编程则完成一个功能，其他代码用来调用即可，提供了代码的重用性和代码间的耦合。而对于一个复杂的功能来，可能需要多个函数才能完成（函数又可以在不同的.py文件中），n个 .py 文件组成的代码集合就称为模块。模块分为内建模块、自定义的模块、安装的第三方的模块
 
-### 1. 导入模块
+### 导入模块
 
 Python之所以应用越来越广泛，在一定程度上也依赖于其为程序员提供了大量的模块以供使用，如果想要使用模块，则需要导入。导入模块有一下几种方法：
 ```
