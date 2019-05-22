@@ -286,7 +286,7 @@ Python也可以很容易的处理ymal文档格式，只不过需要安装一个�
 - https://pyyaml.org/wiki/PyYAMLDocumentation
 - https://blog.51cto.com/506554897/1984140
 
-1. 解析yaml文件
+#### 1. 解析yaml文件
 ```
 cat config.yaml 
 
@@ -307,7 +307,7 @@ with open('config.yaml', encoding='UTF-8') as config_file:
 
 #{'apple': {'color': 'red', 'weight': 500}, 'dog': {'name': 'DaHuang'}}
 ```
-2. 写入yaml文件
+#### 2. 写入yaml文件
 ```
 #!/usr/bin/env python
 #-*- coding:utf-8 -*-
