@@ -4,7 +4,7 @@
 3. [迭代器](https://github.com/xiaozhiqi2000/learn_python/tree/master/day04#%E8%BF%AD%E4%BB%A3%E5%99%A8)
 2. [列表解析](https://github.com/xiaozhiqi2000/learn_python/tree/master/day04#%E5%88%97%E8%A1%A8%E8%A7%A3%E6%9E%90)
 5. [递归](https://github.com/xiaozhiqi2000/learn_python/tree/master/day04#%E9%80%92%E5%BD%92)
-6. [深浅复制]()
+6. [深浅复制](https://github.com/xiaozhiqi2000/learn_python/tree/master/day04#%E6%B7%B1%E6%B5%85%E5%A4%8D%E5%88%B6)
 
 ## 生成器
 
