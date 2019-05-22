@@ -231,7 +231,7 @@ re.VERBOSE
        re_pattern_syntax4()
        re_pattern_syntax5()
    ```    
--re.I/re.IGNORECASE
+- re.I/re.IGNORECASE
    ```
    import re
     
@@ -304,7 +304,7 @@ re.VERBOSE
    
    除了简单地判断是否匹配之外，正则表达式还有提取子串的强大功能。用()表示的就是要提取的分组，可以有多个组，分组的用法很多，记住正则分组： 去已经匹配到的数据中提取数据
 
-   1. re.match()有无分组比较
+   - re.match()有无分组比较
    ``` 
    # 无分组
    r = re.match("h\w+", origin)
@@ -320,7 +320,7 @@ re.VERBOSE
    print(r.groups())    # 获取模型中匹配到的分组结果
    print(r.groupdict()) # 获取模型中匹配到的分组中所有执行了key的组
    ```
-   2. re.search()有无分组比较　　
+   - re.search()有无分组比较　　
    ```
    # 无分组
     
@@ -336,7 +336,7 @@ re.VERBOSE
    print(r.groups())    # 获取模型中匹配到的分组结果
    print(r.groupdict()) # 获取模型中匹配到的分组中所有执行了key的组
    ```
-   3. re.findall()有无分组比较　　
+   - re.findall()有无分组比较　　
    ```
    # 无分组
    r = re.findall("a\w+",origin)
@@ -347,7 +347,7 @@ re.VERBOSE
    r = re.findall("a((\w*)c)(d)", origin)
    print(r)
    ```
-   4. re.split()有无分组比较
+   - re.split()有无分组比较
    ```
    # 无分组
    origin = "hello alex bcd alex lge alex acd 19"
@@ -362,10 +362,20 @@ re.VERBOSE
    r2 = re.split("(al(ex))", origin, 1)
    print(r2)
    ```
-### 常用正则表达式：
-[列表解析例子](https://github.com/xiaozhiqi2000/learn_python/blob/master/day04/iterableExample.py)
+[更多分组例子](https://github.com/xiaozhiqi2000/learn_python/blob/master/day05/reExample.py)
 
 ## 常用正则表达式：
+
+```
+# 检测一个IP地址，比如说192.168.1.1，下面看下代码怎么实现的
+
+c=re.compile(r'((1\d\d|2[0-4]\d|25[0-5]|[1-9]\d|\d)\.){3}(1\d\d|2[0-4]\d|25[0-5]|[1-9]\d|\d)')
+print(c.search('245.255.256.25asdsa10.11.244.10').group())
+
+# 10.11.244.10  245.255.256.25不符合要求所以就没有匹配出来
+
+```
+
 IP：^(25[0-5]|2[0-4]\d|[0-1]?\d?\d)(\.(25[0-5]|2[0-4]\d|[0-1]?\d?\d)){3}$
 
 手机号：^1[3|4|5|8][0-9]\d{8}$
