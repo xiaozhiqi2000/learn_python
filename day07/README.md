@@ -330,24 +330,144 @@ if __name__ == '__main__':
 
 ## configparser模块
 
+configparser用于处理特定格式的文件如有键值对[]等，其本质上是利用open来操作文件。
 
+#### 1. 获取config节点
+```
+import configparser
+  
+config = configparser.ConfigParser()
+config.read('xxoo.conf', encoding='utf-8')
+ret = config.sections()          #获取所有节点　　
+ret = config.items('section1')   #获取指定节点下所有的键值对
+ret = config.options('section1') #获取指定节点下所有的建
+ret = config.get('section1', 'k1') #获取指定节点下指定key的值
+# v = config.getint('section1', 'k1')
+# v = config.getfloat('section1', 'k1')
+# v = config.getboolean('section1', 'k1')
+print(ret)
 
+#### 2. 检查、删除、添加节点
+```
+import configparser
+config = configparser.ConfigParser()
+config.read('xxxooo', encoding='utf-8')
 
+# 检查节点
+has_sec = config.has_section('section1')
+print(has_sec)
+  
+# 添加节点
+config.add_section("SEC_1")
+config.write(open('xxxooo', 'w'))
+  
+# 删除节点
+config.remove_section("SEC_1")
+config.write(open('xxxooo', 'w'))
+```
+### 3.检查、删除、设置指定组内的键值对
+```
+import configparser
+  
+config = configparser.ConfigParser()
+config.read('xxxooo', encoding='utf-8')
+  
+# 检查
+has_opt = config.has_option('section1', 'k1')
+print(has_opt)
+  
+# 删除
+config.remove_option('section1', 'k1')
+config.write(open('xxxooo', 'w'))
+  
+# 设置
+config.set('section1', 'k10', "123")
+config.write(open('xxxooo', 'w'))
+```
 
+## shutil模块
 
+高级的 文件、文件夹、压缩包 处理模块，注意当前用户要是对其他文件或目录没有权限会报错
 
+#### 1. shutil.copyfileobj(fsrc, fdst[, length])  将文件内容拷贝到另一个文件中
+```
+import shutil
+ 
+shutil.copyfileobj(open('/etc/passwd','r'), open('password', 'w'))
+```
+#### 2. shutil.copyfile(src, dst)  拷贝文件　　
+```
+import shutil
+ 
+shutil.copyfile('/etc/passwd','password1')
+```
+#### 3. shutil.ignore_patterns(*patterns)  忽略某些文件
+#### 3. shutil.copytree(src, dst, symlinks=False, ignore=None) 递归的去拷贝文件夹
+```
+import shutil
 
+shutil.copytree('/etc','etc', ignore=shutil.ignore_patterns('*.conf', 'tmp*'))
+```
+#### 4. shutil.rmtree(path[, ignore_errors[, onerror]])  递归删除文件夹　　
+```
+import shutil
+ 
+shutil.rmtree('etc')
+```
+#### 5. shutil.move(src, dst)   它类似mv命令，其实就是重命名。　　
+```
+import shutil
+  
+shutil.move('folder1', 'folder3')
+```
+#### 6. shutil.make_archive(base_name, format,...)  创建压缩包并返回文件路径，例如：zip、tar
 
+创建压缩包并返回文件路径，例如：zip、tar
 
-
-
-
-
-
-
-
-
-
-
-
-
+- base_name： 压缩包的文件名，也可以是压缩包的路径。只是文件名时，则保存至当前目录，否则保存至指定路径，
+   - 如：www                        =>保存至当前路径
+   - 如：/Users/wupeiqi/www =>保存至/Users/wupeiqi/
+- format：    压缩包种类，“zip”, “tar”, “bztar”，“gztar”
+- root_dir：  要压缩的文件夹路径（默认当前目录）
+- owner： 用户，默认当前用户
+- group： 组，默认当前组
+- logger：    用于记录日志，通常是logging.Logger对象
+```
+import shutil
+ 
+#将 /home/tomcat/ 下的文件打包放置当前程序目录
+ret = shutil.make_archive("test", 'gztar', root_dir='/home/tomcat/')
+ 
+#将 /home/tomcat/ 下的文件打包放置 /home/tomcat/目录
+ret = shutil.make_archive("/home/tomcat/www", 'gztar', root_dir='/home/tomcat/')
+```
+#### 7. shutil 对压缩包的处理是调用 ZipFile 和 TarFile 两个模块来进行的，详细：
+```
+import zipfile
+ 
+# 压缩
+z = zipfile.ZipFile('laxi.zip', 'w')
+z.write('a.log')
+z.write('data.data')
+z.close()
+ 
+# 解压
+z = zipfile.ZipFile('laxi.zip', 'r')
+z.extractall()
+z.close()
+```
+#### 8. TarFile
+```
+import tarfile
+ 
+# 压缩
+tar = tarfile.open('your.tar','w')
+tar.add('/Users/wupeiqi/PycharmProjects/bbs2.log', arcname='bbs2.log')
+tar.add('/Users/wupeiqi/PycharmProjects/cmdb.log', arcname='cmdb.log')
+tar.close()
+ 
+# 解压
+tar = tarfile.open('your.tar','r')
+tar.extractall()  # 可设置解压地址
+tar.close()
+```
