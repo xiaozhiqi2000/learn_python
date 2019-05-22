@@ -11,6 +11,7 @@
 Python中用于序列化的两个模块
 
 json     用于【字符串】和 【python基本数据类型】 间进行转换
+
 pickle   用于【python特有的类型】 和 【python基本数据类型】间进行转换
 - json()将字符串形式的列表或字典转换为list或dict类型，json是所有语言相互通信的方式
 - 注意外层字符形式一定是''单引号,'{"a":"xiao","b":"xiao"}'列表或字典中的字符串一定要""双引号,否则报错
@@ -279,10 +280,55 @@ tree.write("page.xml",
 
 ## PyYAML模块
 
-Python也可以很容易的处理ymal文档格式，只不过需要安装一个模块，参考文档：http://pyyaml.org/wiki/PyYAMLDocumentation 
+Python也可以很容易的处理ymal文档格式，只不过需要安装一个模块
 
+参考文档:
+- https://pyyaml.org/wiki/PyYAMLDocumentation
+- https://blog.51cto.com/506554897/1984140
 
+1. 解析yaml文件
+```
+cat config.yaml 
 
+apple:
+  color: red
+  weight: 500
+dog:
+  name: DaHuang
+```
+config.yaml为上述格式
+```
+#!/usr/bin/env python
+
+import yaml
+with open('config.yaml', encoding='UTF-8') as config_file:
+    config = yaml.safe_load(config_file)
+    print(config)
+
+#{'apple': {'color': 'red', 'weight': 500}, 'dog': {'name': 'DaHuang'}}
+```
+2. 写入yaml文件
+```
+#!/usr/bin/env python
+#-*- coding:utf-8 -*-
+import yaml
+ 
+if __name__ == '__main__':
+    guy = {
+        'name': '陈二',
+        'age': '22',
+        'tag': 'loser'
+    }
+ 
+    # 直接dump可以把对象转为YAML文档
+    print(yaml.dump(guy))
+ 
+    # 也可以直接dump到文件或者流中
+    with open('guy.yaml', 'w', encoding='UTF-8') as guy_file:
+        yaml.dump(guy, guy_file)
+```
+
+## configparser模块
 
 
 
