@@ -80,10 +80,7 @@ os.path.getmtime(path)      返回path所指向的文件或者目录的最后修
 
 用于加密相关的操作，代替了md5模块和sha模块，主要提供 SHA1, SHA224, SHA256, SHA384, SHA512 ，MD5 算法
 ```
-#!/usr/bin/env python
-#-*-cofding:utf-8-*-
 #这是md5加密的,其他sha1、sha256、sha384、sha512换下就好
-
 import hashlib
   
 hash = hashlib.md5()
@@ -93,8 +90,6 @@ print(hash.digest())
 ```
 以上加密算法虽然依然非常厉害，但时候存在缺陷，即：通过撞库可以反解。所以，有必要对加密算法中添加自定义key再来做加密。　　
 ```
-#!/usr/bin/env python
-#-*-cofding:utf-8-*-
 import hashlib
   
 hash = hashlib.md5(bytes('898oaFs09f',encoding="utf-8"))
@@ -103,8 +98,6 @@ print(hash.hexdigest())
 ```
 ## random模块
 ```
-#!/usr/bin/env python
-#-*-cofding:utf-8-*-
 import random
   
 print(random.random())              # 生成0-1之间的随机小数
@@ -262,7 +255,7 @@ logger.critical('critical message')
 - os.popen('ls').read() 直接使用shell命令,可以保存运行的结果
 - subprocess
 
-1. subprocess.call() 执行命令，返回状态码
+### 1. subprocess.call() 执行命令，返回状态码
 - shell=False,第一个参数必须是列表
 - shell=True,第一个参数就直接输入命令即可
 ```
@@ -270,7 +263,7 @@ ret = subprocess.call(["ls", "-l"], shell=False)
 或
 ret = subprocess.call("ls -l", shell=True)
 ```
-2. subprocess.check_call() 执行命令，如果执行成功状态码是0，否则抛异常
+### 2. subprocess.check_call() 执行命令，如果执行成功状态码是0，否则抛异常
 - shell=False,第一个参数必须是列表
 - shell=True,第一个参数就直接输入命令即可
 ```
@@ -279,7 +272,7 @@ print(ret)
 ret = subprocess.check_call("exit 1", shell=True)
 print(ret)
 ```
-3. subprocess.check_output() 执行命令，如果成功状态码是 0 ，则返回执行结果，否则抛异常，注意这里返回的是字节类型,需要转换
+### 3. subprocess.check_output() 执行命令，如果成功状态码是 0 ，则返回执行结果，否则抛异常，注意这里返回的是字节类型,需要转换
 - shell=False,第一个参数必须是列表
 - shell=True,第一个参数就直接输入命令即可
 ```
@@ -289,7 +282,7 @@ print(str(ret,encoding='utf-8'))
 ret = subprocess.check_output("exit 1", shell=True)
 print(str(ret,encoding='utf-8'))
 ```
-4. subprocess.run()  python3.5新加的功能,代替os.system,os.spawn
+### 4. subprocess.run()  python3.5新加的功能,代替os.system,os.spawn
 - shell=False,第一个参数必须是列表
 - shell=True,第一个参数就直接输入命令即可
 ```
@@ -303,7 +296,7 @@ CompletedProcess(args=['ls', '-l'], returncode=0)
 subprocess.run("ls -l /dev/null", shell=True, stdout=subprocess.PIPE)
 CompletedProcess(args=['ls', '-l', '/dev/null'], returncode=0, stdout=b'crw-rw-rw- 1 root root 1, 3 Mar 28 17:00 /dev/null\n')
 ```
-5. subprocess.Popen()  用于执行复杂的系统命令,是上面方法的底层实现
+### 5. subprocess.Popen()  用于执行复杂的系统命令,是上面方法的底层实现
 
 调用subprocess.run(...)是推荐的常用方法，在大多数情况下能满足需求，但如果你可能需要进行一些复杂的与系统的交互的话，你还可以用subprocess.Popen(),语法如下：
 - shell=False,第一个参数必须是列表
