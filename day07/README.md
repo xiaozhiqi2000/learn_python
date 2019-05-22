@@ -77,7 +77,7 @@ xml是实现不同语言或程序之间进行数据交换的协议，跟json差�
 ```
 [XML文件xo.xml]()
 
-### 1.解析XML两种方法
+#### 1.解析XML两种方法
 - (1)利用ElementTree.XML将字符串解析成xml对象
 ```
 from xml.etree import ElementTree as ET
@@ -93,7 +93,7 @@ tree = ET.parse("xo.xml")   # 直接解析xml文件
 root = tree.getroot()   # 获取xml文件的根节点
 ```
 
-### 2.操作XML
+#### 2.操作XML
 - (1)遍历XML文档的所有内容
 ```
 上面两种解析XML方法随便一种获取到了xml的root节点 
@@ -167,7 +167,7 @@ for country in root.findall('country'):
 tree = ET.ElementTree(root)
 tree.write("newnew.xml", encoding='utf-8')
 ```
-### 3. 创建XML文档
+#### 3. 创建XML文档
 - 创建方式（一）
 ```
 from xml.etree import ElementTree as ET
@@ -257,7 +257,7 @@ f = open("xxxoo.xml",'w',encoding='utf-8')
 f.write(raw_str)
 f.close()
 ```
-### 4.命名空间
+#### 4.命名空间
 [详细介绍](http://www.w3school.com.cn/xml/xml_namespaces.asp)
 ```
 from xml.etree import ElementTree as ET
