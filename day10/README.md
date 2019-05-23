@@ -183,13 +183,13 @@ assert 1 == 2
 ```
 
 ## 模块中特殊的变量
-#### 1. __doc__
+#### 1.\__doc__
 
 获取文件的注释,在文件的开头"""三引号的注释
-#### 2. __cached__
+#### 2. \__cached__
 
 导入模块的时候会生成.pyc文件,存放的位置
-#### 3. __package__
+#### 3. \__package__
 ```
 ├── lib
 │   ├── account.py
@@ -197,14 +197,14 @@ assert 1 == 2
 
 模块在哪个包中,如在home.py中写上print(__package__)则会打印lib,home.py是在lib这个包里
 ```
-#### 4. __file__
+#### 4. \__file__
 
 运行当前py脚本的文件路径
 ```
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(BASE_DIR)
 ```
-#### 5. __name__
+#### 5. \__name__
 
 只有执行当前py脚本的时候，当前文件的特殊变量__name__ == "__main__",当导入别的脚本中就不会执行了
 
