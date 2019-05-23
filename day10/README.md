@@ -14,11 +14,11 @@ python中的反射功能是由以下四个内置函数提供
 - __import__()
 - importlib() 推荐使用
 #### 1. 以伪造Web框架的路由系统举例(执行脚本和模块在同一目录)
+```
 ├── account.py
 ├── home.py
 ├── index.py
 └── README.md
-```
 #!/usr/bin/env python
 #-*- coding:utf8 -*-
 
@@ -55,12 +55,13 @@ if __name__ == "__main__":
 #执行 python index.py 输入home/home或者account/login就会执行home.py中的home()方法，就会执行account.py中的login()方法
 ```
 #### 2. 以伪造Web框架的路由系统举例(执行脚本和模块在不同一目录)
+```
 ├── index.py
 ├── lib
 │   ├── account.py
 │   └── home.py
 └── README.md
-```
+
 #!/usr/bin/env python
 #-*- coding:utf8 -*-
 
@@ -101,15 +102,15 @@ if __name__ == "__main__":
 ```
 ## 异常处理
 
-#### python异常是一个对象，表示错误或意外情况
-1. 在python检测到一个错误时，将触发一个异常
+#### 1. python异常是一个对象，表示错误或意外情况
+在python检测到一个错误时，将触发一个异常
    - python可以通常异常传导机制传递一个异常对象，发出一个异常情况出现的信号
    - 程序员也可以在代码中手动触发异常
-2. python异常也可以理解为：程序出现了错误而在正常控制流以外采取的行为
+python异常也可以理解为：程序出现了错误而在正常控制流以外采取的行为
    - 第一阶段：解释器触发异常，此时当前程序流将被打断
    - 第二阶段：异常处理，如忽略非致命错误、减轻错误带来的影响等
 
-#### 异常处理语法:
+#### 2. 异常处理语法:
 ```
 try:
     # 主代码块
@@ -124,7 +125,7 @@ finally:
     # 无论异常与否，最终执行该块
     pass
 ```
-#### 常见的异常错误
+#### 3. 常见的异常错误
 ```
 AssertionError: 断言语句失败
 AttributeError: 属性引用或赋值失败
@@ -149,14 +150,14 @@ ValueError：应用于某个对象的操作或函数，这个对象具有正确�
 WindowsError：模块os中的函数引发的异常，用来指示与WIndows相关的错误
 ZeroDivisionError： 除数为0
 ```
-#### 主动触发异常
+#### 4. 主动触发异常
 ```
 try:
     raise Exception('错误了。。。')
 except Exception as e:
     print(e)
 ```
-### 自定义异常
+#### 5. 自定义异常
 ```
 class MyException(Exception):
   
@@ -171,7 +172,7 @@ try:
 except WupeiqiException as e:
     print(e)
 ```
-#### 断言
+#### 6. 断言
 ```
 # assert 条件
   
@@ -180,9 +181,38 @@ assert 1 == 1
 assert 1 == 2
 ```
 
+## 模块中特殊的变量
+#### 1. __doc__
 
+获取文件的注释,在文件的开头"""三引号的注释
+#### 2. __cached__
 
+导入模块的时候会生成.pyc文件,存放的位置
+#### 3. __package__
 
+模块在哪个包中
+#### 4. __file__
+
+运行当前py脚本的文件路径
+```
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(BASE_DIR)
+```
+#### 5. __name__
+
+只有执行当前py脚本的时候，当前文件的特殊变量__name__ == "__main__",当导入别的脚本中就不会执行了
+
+```
+def run():
+    print("run")
+
+run()
+
+#if __name__ == "__main__":
+#    run()
+
+#如果没有写 if __name__ == "__main__" 则导入别的脚本中则会执行 run()
+```
 
 
 
