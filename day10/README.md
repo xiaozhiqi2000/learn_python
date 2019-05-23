@@ -195,8 +195,8 @@ assert 1 == 2
 │   ├── account.py
 │   └── home.py
 
-```
 模块在哪个包中,如在home.py中写上print(__package__)则会打印lib,home.py是在lib这个包里
+```
 #### 4. __file__
 
 运行当前py脚本的文件路径
