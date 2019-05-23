@@ -1,7 +1,7 @@
 # 今天主要内容
-1. [反射](https://github.com/xiaozhiqi2000/learn_python/tree/master/day07#json%E6%A8%A1%E5%9D%97)
-2. [异常处理](https://github.com/xiaozhiqi2000/learn_python/tree/master/day07#pickle%E6%A8%A1%E5%9D%97)
-3. [模块中特殊变量](https://github.com/xiaozhiqi2000/learn_python/tree/master/day07#xml%E6%A8%A1%E5%9D%97)
+1. [反射](https://github.com/xiaozhiqi2000/learn_python/tree/master/day10#%E5%8F%8D%E5%B0%84)
+2. [异常处理](https://github.com/xiaozhiqi2000/learn_python/tree/master/day10#%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86)
+3. [模块中特殊变量](https://github.com/xiaozhiqi2000/learn_python/tree/master/day10#%E6%A8%A1%E5%9D%97%E4%B8%AD%E7%89%B9%E6%AE%8A%E7%9A%84%E5%8F%98%E9%87%8F)
 
 ## 反射
 
