@@ -37,6 +37,8 @@ json.dump(li,open('db','w'))
 l = json.load(open('db','r'))
 print(l,type(l))
 ```
+[利用json和requests模块获取天气](https://github.com/xiaozhiqi2000/learn_python/blob/master/day07/weatherJson.py)
+
 ## pickle模块
 
 pickple只有python才能用,用于复杂类型的序列化,(如果是序列化一个对象,在别的模块中反序列化的时候一定要导入该对象所属的类,否则报错)
@@ -75,7 +77,7 @@ xml是实现不同语言或程序之间进行数据交换的协议，跟json差�
     </country>
 </data>
 ```
-[XML文件xo.xml]()
+[XML文件xo.xml](https://github.com/xiaozhiqi2000/learn_python/blob/master/day07/xo.xml)
 
 #### 1.解析XML两种方法
 - (1)利用ElementTree.XML将字符串解析成xml对象
@@ -333,6 +335,7 @@ if __name__ == '__main__':
 configparser用于处理特定格式的文件如有键值对[]等，其本质上是利用open来操作文件。
 
 #### 1. 获取config节点
+[xxoo.conf](https://github.com/xiaozhiqi2000/learn_python/blob/master/day07/xxoo.conf)
 ```
 import configparser
   
