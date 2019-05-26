@@ -101,6 +101,37 @@ if __name__ == "__main__":
 
 #执行 python index1.py 输入home/home或者account/login就会执行lib.home.py中的home()方法，就会执行lib.account.py中的login()方法
 ```
+#### 3. 类也是对象也能使用hasattr、getattr、setattr、delattr
+```
+class Foo(object):
+  
+    def __init__(self):
+        self.name = 'python'
+  
+    def func(self):
+        return 'func'
+  
+obj = Foo()
+obj.name
+obj.__dict__['name']
+getattr(obj,'name']
+  
+# #### 检查是否含有成员 ####
+hasattr(obj, 'name')
+hasattr(obj, 'func')
+  
+# #### 获取成员 ####
+getattr(obj, 'name')
+getattr(obj, 'func')
+  
+# #### 设置成员 ####
+setattr(obj, 'age', 18)
+setattr(obj, 'show', lambda num: num + 1)
+  
+# #### 删除成员 ####
+delattr(obj, 'name')
+delattr(obj, 'func')
+```
 ## 异常处理
 
 #### 1. python异常是一个对象，表示错误或意外情况
