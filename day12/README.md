@@ -6,7 +6,7 @@
 4. [类的特殊成员]()
 
 
-## 属性
+## 类成员
 类的成员可以分为三大类：属性、方法和包装
 
 (很重要的一句话，实例可以访问实例属性和方法包括类中的所有属性和方法，但是类不可以访问实例中的属性和方法，实例中的属性和方法需要实例化后才能调用和访问，但类依然不可以访问和调用方法)
@@ -155,7 +155,7 @@ p.foo.__doc__        # 自动获取第四个参数中设置的值：description.
 ## 类的特殊成员
 
 上文介绍了Python的类成员以及成员修饰符，从而了解到类中有属性、方法和包装三大类成员，并且成员名前如果有两个下划线，则表示该成员是私有成员，私有成员只能由类内部调用。无论人或事物往往都有不按套路出牌的情况，Python的类成员也是如此，存在着一些具有特殊含义的成员，详情如下：
-#### 1. __doc__ 表示类的描述信息
+#### 1. \_\_doc__ 表示类的描述信息
 ```
 class Foo:
     """ 描述类信息，这是用于看片的神奇 """
@@ -166,7 +166,7 @@ class Foo:
 print(Foo.__doc__)
 #输出：类的描述信息
 ```
-#### 2. __module__ 和  __class__ 
+#### 2. \_\_module__ 和  __class__ 
 - __module__ 表示当前操作的对象在那个模块
 - __class__     表示当前操作的对象的类是什么
 ```
@@ -183,7 +183,7 @@ obj = C()
 print obj.__module__     # 输出 lib.aa，即：输出模块
 print obj.__class__      # 输出 lib.aa.C，即：输出类
 ```
-#### 3. __init__ 构造方法，通过类创建对象时，自动触发执行。
+#### 3. \_\_init__ 构造方法，通过类创建对象时，自动触发执行。
 ```
 class Foo():
  
@@ -194,7 +194,7 @@ class Foo():
  
 obj = Foo('python') # 自动执行类中的 __init__ 方法
 ```
-#### 4. __del__  析构方法，当对象在内存中被释放时，自动触发执行。
+#### 4. \_\_del__  析构方法，当对象在内存中被释放时，自动触发执行。
 
 注：此方法一般无须定义，因为Python是一门高级语言，程序员在使用时无需关心内存的分配和释放，因为此工作都是交给Python解释器来执行，所以，析构函数的调用是由解释器在进行垃圾回收时自动触发执行的
 ```
@@ -203,7 +203,7 @@ class Foo:
     def __del__(self):
         pass
 ```
-#### 5. __call__ 对象后面加括号，触发执行。
+#### 5. \_\_call__ 对象后面加括号，触发执行。
 
 注：构造方法的执行是由创建对象触发的，即：对象 = 类名() ；而对于 __call__ 方法的执行是由对象后加括号触发的，即：对象() 或者 类()()
 ```
@@ -223,7 +223,7 @@ obj = Foo('python',27)
 obj()                      # 对象() 会执行类中__call__方法
 Foo('python',27)() # 这一句相当于上两句
 ```
-#### 6. __dict__ 类或对象中的所有成员
+#### 6. \_\_dict__ 类或对象中的所有成员
 
 上文中我们知道：类的普通字段属于对象；类中的静态字段和方法等属于类
 ```
@@ -252,7 +252,7 @@ print(obj2.__dict__)
 # 获取 对象obj2 的成员
 # 输出：{'count': 3888, 'name': 'HeNan'}
 ```
-#### 7.__str__ 如果一个类中定义了__str__方法，那么在打印 对象 时，默认输出该方法的返回值
+#### 7. \_\_str__ 如果一个类中定义了\_\_str__方法，那么在打印 对象 时，默认输出该方法的返回值
 ```
 class Foo:
  
@@ -275,7 +275,7 @@ print(type(ret),ret)
 ret = obj1 + obj2
 print(ret)
 ```
-#### 8. __getitem__、__setitem__、__delitem__ 用于索引操作，如字典。以上分别表示获取、设置、删除数据
+#### 8. \_\_getitem__、\_\_setitem__、\_\_delitem__ 用于索引操作，如字典。以上分别表示获取、设置、删除数据
 ```
 class Foo():
     def __init__(self,name,age):
@@ -303,7 +303,7 @@ obj['k1'] = 111   # 自动触发执行 __setitem__
  
 del obj['k1']     # 自动触发执行 __delitem__
 ```
-#### 9. __getslice__、__setslice__、__delslice__(此方法只适用于python2.x)该三个方法用于分片操作，如：列表
+#### 9. \_\_getslice__、\_\_setslice__、\_\_delslice__(此方法只适用于python2.x)该三个方法用于分片操作，如：列表
 ```
 class Foo(object):
   
@@ -322,7 +322,7 @@ obj[-1:1]                   # 自动触发执行 __getslice__
 obj[0:1] = [11,22,33,44]    # 自动触发执行 __setslice__
 del obj[0:2]                # 自动触发执行 __delslice__
 ```
-python3.x依然使用__getitem__、__setitem__、__delitem__
+python3.x依然使用\_\_getitem__、\_\_setitem__、__delitem__
 ```
 class Foo:
  
@@ -356,7 +356,7 @@ obj[1:4] = [11,22,33,44,55]
  
 del obj[1:4]　
 ```
-#### 10. __iter__ 用于迭代器，之所以列表、字典、元组可以进行for循环，是因为类型内部定义了 __iter__ 
+#### 10. \_\_iter__ 用于迭代器，之所以列表、字典、元组可以进行for循环，是因为类型内部定义了 __iter__ 
 ```
 class Foo(object):
  
@@ -385,7 +385,7 @@ obj = Foo([11,22,33,44])
 for i in obj:
     print(i)
 ```
-#### 11. __new__ 和 __metaclass__
+#### 11. \_\_new__ 和 \_\_metaclass__
 ```
 class Foo(object):
   
@@ -393,17 +393,18 @@ class Foo(object):
         pass
   
 obj = Foo()   # obj是通过Foo类实例化的对象
+
+print type(obj) # 输出：<class '__main__.Foo'>     表示，obj 对象由Foo类创建
+print type(Foo) # 输出：<type 'type'>              表示，Foo类对象由 type 类创建
+```
 上述代码中，obj 是通过 Foo 类实例化的对象，其实，不仅 obj 是一个对象，Foo类本身也是一个对象，因为在Python中一切事物都是对象。
 
 如果按照一切事物都是对象的理论：obj对象是通过执行Foo类的构造方法创建，那么Foo类对象应该也是通过执行某个类的 构造方法 创建。
 
-print type(obj) # 输出：<class '__main__.Foo'>     表示，obj 对象由Foo类创建
-print type(Foo) # 输出：<type 'type'>              表示，Foo类对象由 type 类创建
-
 所以，obj对象是Foo类的一个实例，Foo类对象是 type 类的一个实例，即：Foo类对象 是通过type类的构造方法创建。
 
-
 那么，创建类就可以有两种方式：
+```
 a). 普通方式
 class Foo(object):
   
@@ -415,14 +416,16 @@ def func(self):
     print 'hello wupeiqi'
   
 Foo = type('Foo',(object,), {'func': func})
+
 #type第一个参数：类名
 #type第二个参数：当前类的基类
 #type第三个参数：类的成员
 ＝＝》 类 是由 type 类实例化产生
-
+```
 那么问题来了，类默认是由 type 类实例化产生，type类中如何实现的创建类？类又是如何创建对象？
-答：类中有一个属性 __metaclass__，其用来表示该类由 谁 来实例化创建，所以，我们可以为 __metaclass__ 设置一个type类的派生类，从而查看 类 创建的过程。
 
+答：类中有一个属性 __metaclass__，其用来表示该类由 谁 来实例化创建，所以，我们可以为 __metaclass__ 设置一个type类的派生类，从而查看 类 创建的过程。
+```
 class MyType(type):
  
     def __init__(self, what, bases=None, dict=None):
