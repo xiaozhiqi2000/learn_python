@@ -82,7 +82,8 @@ print(c3_obj.aaa.obj.name)    # c3类中找到c2类中的属性,1. c3_obj.aaa=c1
 ret = c3_obj.aaa.obj.show()   # c3类中找到c2类中的方法执行并接收返回值
 print(ret)
 ```
-[游戏人生]()
+#### 4. 例子
+[游戏人生](https://github.com/xiaozhiqi2000/learn_python/blob/master/day11/gameClass.py)
 
 ## 继承
 
@@ -199,32 +200,3 @@ arg这个形态就可以多种形态,可以是字符串,可以数字,可以列�
 但是在其他语言中却不能这样定义,必须要定义是什么形态的比如def f(string arg),那么arg只能是字符串这种形态
 如果ojb = f(11)就会报错，只能传入字符串,obj=f("hello")才不会报错
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
