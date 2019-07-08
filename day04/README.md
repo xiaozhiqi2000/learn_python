@@ -44,7 +44,9 @@ start
 
 [yield例子](https://github.com/xiaozhiqi2000/learn_python/blob/master/day04/yieldExample.py)
 
-[使用yield自定义range函数](https://github.com/xiaozhiqi2000/learn_python/blob/master/day03/definrYieldExample.py)
+[yield例子](https://github.com/xiaozhiqi2000/learn_python/blob/master/day04/yieldExample1.py)
+
+[使用yield自定义range函数](https://github.com/xiaozhiqi2000/learn_python/blob/master/day04/definrYieldExample.py)
 
 ## 生成器表达式
 
