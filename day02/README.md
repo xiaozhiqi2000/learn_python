@@ -85,6 +85,7 @@ dict.update(key)   将一个字典合并到当前字典中
 dict.iteritems()   生成key-value迭代器，可以用next()取下个key-value
 dict.iterkeys()    生成key迭代器
 dict.itervalues()  生成values迭代器
+dict.setdefault('k','v') 设置dict的key,value, dict.setdefault('k',set([])).add(123)
 
 两种遍历字典方法：
 第一种：
